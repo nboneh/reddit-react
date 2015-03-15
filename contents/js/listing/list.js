@@ -10,7 +10,7 @@ var List = React.createClass({displayName: 'List',
             dataType: 'json',
             success: function(data) {
                 this.setState({
-                    data: data
+                    data: data.data.children
                 });
             }.bind(this),
             error: function(xhr, status, err) {
@@ -19,8 +19,8 @@ var List = React.createClass({displayName: 'List',
         });
     },
 
-    handleListItemClicked: function(business_id){
-        var post = _.find(this.state.data, {business_id: business_id})
+    handleListItemClicked: function(id){
+        var post = _.find(this.state.data, {data.id: id})
         this.refs.postiew.setState({post:post})
     },
 
@@ -31,17 +31,17 @@ var List = React.createClass({displayName: 'List',
         var posts = this.state.data.map(function (post) {
         
           return (    
-            <DoctorListItem doctor={doctor} onListItemClicked={self.handleListItemClicked}/>
+            <ListItem post={post} onListItemClicked={self.handleListItemClicked}/>
             )
         })        
 
         return (
-            <div className="doctorPage">
-                <div className="doctorList six columns">
-                    {doctors}
+            <div className="postPage">
+                <div className="list six columns">
+                    {posts}
                 </div>
-                <div className="doctorView six columns">
-                    <DoctorView ref="doctorView"/>
+                <div className="post six columns">
+                    <Post ref="post"/>
                 </div>
             </div>
         )
