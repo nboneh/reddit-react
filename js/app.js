@@ -1,20 +1,13 @@
-$( "#doctors" ).on( "click", function( event ) {
+$( "#hotList" ).on( "click", function( event ) {
     React.render(
-        <DoctorList url='data/doctors.json.data'/>,
+        <List url='https://api.reddit.com/hot'/>,
         document.getElementById('content')
     )
 })
 
-$( "#users" ).on( "click", function( event ) {
-    React.render(
-        <UserList url='data/users.json.data'/>,
-        document.getElementById('content')
-    )
-})
-
-$( "#restaurants" ).on( "click", function( event ) {
-    React.render(
-        <RestaurantList url='data/restaurants.json.data'/>,
+$( "#newList" ).on( "click", function( event ) {
+     React.render(
+        <List url='https://api.reddit.com/new'/>,
         document.getElementById('content')
     )
 })
