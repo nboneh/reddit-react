@@ -1,4 +1,4 @@
 ---
-title: Yelp
+title: Reddit
 template: index.jade
 ---

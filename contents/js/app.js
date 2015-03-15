@@ -1,4 +1,5 @@
-$( "#hotList" ).on( "click", function( event ) {
+$("#hotList").on( "click", function( event ) {
+	React.unmountComponentAtNode(document.getElementById('container'));
     React.render(
         <List url='https://api.reddit.com/hot'/>,
         document.getElementById('content')
@@ -6,9 +7,12 @@ $( "#hotList" ).on( "click", function( event ) {
 })
 
 $( "#newList" ).on( "click", function( event ) {
-     React.render(
-        <List url='https://api.reddit.com/new'/>,
+	React.unmountComponentAtNode(document.getElementById('container'));
+	React.render(
+        <Box url='https://api.reddit.com/new'/>,
         document.getElementById('content')
     )
 })
+
+
 
