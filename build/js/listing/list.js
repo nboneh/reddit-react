@@ -48,6 +48,7 @@ var List = React.createClass({displayName: 'List',
         )
     }
 })
+
 var Box = React.createClass({displayName: 'List',
 
     getInitialState: function() {
@@ -98,4 +99,3 @@ var Box = React.createClass({displayName: 'List',
         )
     }
 })
-

@@ -10,7 +10,7 @@ var ListItem = React.createClass({
         var post = this.props.post
 
         return ( 
-            <div className="post row" >
+            <div className="post row"  ><br/>
                 <div className="postTitle six columns" onClick={this.handleClick}>
                     Title: {post.data.title}                    
                 </div>
@@ -22,13 +22,11 @@ var ListItem = React.createClass({
                     Subreddit: {post.data.subreddit}   
                 </div>
                   <div className="postUpvotes six columns">
-                    UpVotes: #{post.data.ups} 
+                    UpVotes: {post.data.ups} 
                 </div>
                   <div className="postAuthor six columns">
                     Url: <a href={post.data.url}>{post.data.url}</a>  
                 </div>
-    
-    
             </div>
         )
   }
